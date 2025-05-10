@@ -58,7 +58,7 @@ app-ia/
 1. **Node.js** ≥ 16 (LTS)
 2. **npm** ou **Yarn**
 3. **Expo CLI** (usar via `npx expo`)
-4. **Expo Go** no dispositivo móvel
+4. **Expo Go** no dispositivo móvel ou emulador
 
 ---
 
@@ -67,7 +67,7 @@ app-ia/
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/SEU_USUARIO/SEU_REPO.git
+   git clone https://github.com/gabrieltf1901/CP5_MOBILE
    cd app-ia
    ```
 2. Crie `.env` na raiz e adicione sua chave:
@@ -115,15 +115,6 @@ app-ia/
 | `npx expo build` | Gera build via EAS                   |
 | `npm run lint`   | Executa ESLint                       |
 
----
-
-## 🔄 Fluxo de Desenvolvimento
-
-1. Crie uma branch de feature: `git checkout -b feature/nome-da-feature`
-2. Faça commits atômicos e claros.
-3. Dê push: `git push -u origin feature/nome-da-feature`.
-4. Abra Pull Request para `main` (ou `master`).
-5. Após revisão e aprovação, faça merge.
 
 ---
 
