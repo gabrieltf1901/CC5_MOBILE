@@ -67,7 +67,7 @@ app-ia/
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/gabrieltf1901/CP5_MOBILE
+   git clone https://github.com/gabrieltf1901/CC5_MOBILE
    cd app-ia
    ```
 2. Crie `.env` na raiz e adicione sua chave:
