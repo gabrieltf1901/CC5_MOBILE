@@ -1,132 +1,137 @@
-APP IA
+NOME: GABRIEL TORRES FERNANDES - RM553635
 
-Mobile app em React Native que integra chat com IA usando Expo Router, estilizado em preto e branco.
+# APP IA
 
-📋 Descrição
+Mobile app em React Native com chat integrado à API da OpenAI, usando Expo Router e design moderno em preto e branco.
 
-Este projeto, app-ia, oferece uma interface simples e moderna para interagir com a API de Chat Completions da OpenAI. Com navegação baseada em arquivos (Expo Router) e design P&B, possui quatro telas principais:
+---
 
-Home: Boas-vindas e acesso ao chat.
+## 📋 Descrição
 
-Chat IA: Converse com a IA, com loading e tratamento de erros.
+**app-ia** oferece uma interface simples e elegante para interagir com o modelo GPT-3.5-turbo da OpenAI. A navegação é baseada em arquivos (Expo Router) e o estilo utiliza apenas tons de preto, branco e cinza.
 
-Sobre: Informações sobre desenvolvedores e stack.
+### Telas Principais
 
-Configurações: Toggle de Modo Claro e Notificações.
+* **Home**: tela inicial com botão para iniciar conversa.
+* **Chat IA**: chat com loading, tratamento de erros e histórico de mensagens.
+* **Sobre**: informações sobre o projeto, versão e stack utilizada.
+* **Configurações**: controle de Modo Claro e Notificações.
 
-🗂 Estrutura de Pastas
+---
 
+## 🗂 Estrutura de Pastas
+
+```text
 app-ia/
 ├── app/
-│   ├── _layout.js           # Configuração de navegação em abas
-│   ├── index.js             # Tela Home
-│   ├── chat-ia.js           # Tela Chat com IA
-│   ├── sobre.js             # Tela Sobre
-│   └── settings.js          # Tela Configurações
+│   ├── _layout.js       # Navegação em abas
+│   ├── index.js         # Home
+│   ├── chat-ia.js       # Chat IA
+│   ├── sobre.js         # Sobre
+│   └── settings.js      # Configurações
 ├── services/
-│   └── openai.js            # Cliente para OpenAI (via axios ou fetch)
-├── assets/                  # Imagens, fontes e ícones
-├── .env                     # Variáveis de ambiente (não versionar)
-├── babel.config.js          # Babel + plugin react-native-dotenv
-├── package.json             # Dependências e scripts
-└── README.md                # Documentação do projeto
+│   └── openai.js        # Cliente OpenAI (axios ou fetch)
+├── assets/              # Imagens, fontes, ícones
+├── .env                 # Variáveis de ambiente (não versionar)
+├── babel.config.js      # Configuração Babel + dotenv
+├── package.json         # Dependências e scripts
+└── README.md            # Documentação do projeto
+```
 
-⚙️ Tecnologias
+---
 
-React Native
+## ⚙️ Tecnologias
 
-Expo + Expo Router (File-based routing)
+* **React Native**
+* **Expo** + **Expo Router**
+* **styled-components**
+* **axios** (ou **fetch** nativo)
+* **react-native-dotenv**
+* **react-native-safe-area-context**
+* **react-native-screens**
+* **expo-linking**
 
-styled-components para estilo P&B
+---
 
-axios ou fetch para requisições HTTP
+## 🔧 Pré-requisitos
 
-react-native-dotenv para variáveis de ambiente
+1. **Node.js** ≥ 16 (LTS)
+2. **npm** ou **Yarn**
+3. **Expo CLI** (usar via `npx expo`)
+4. **Expo Go** no dispositivo móvel
 
-expo-linking, react-native-safe-area-context, react-native-screens
+---
 
-🔧 Pré-requisitos
+## 🚀 Instalação
 
-Node.js ≥ 16 (LTS)
+1. Clone o repositório:
 
-npm ou Yarn
+   ```bash
+   git clone https://github.com/SEU_USUARIO/SEU_REPO.git
+   cd app-ia
+   ```
+2. Crie `.env` na raiz e adicione sua chave:
 
-Expo CLI (usar via npx expo)
+   ```env
+   OPENAI_API_KEY=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
+   ```
+3. Configure o Babel (`react-native-dotenv`):
 
-Expo Go instalado no dispositivo móvel
+   ```js
+   // babel.config.js
+   module.exports = function(api) {
+     api.cache(true);
+     return {
+       presets: ['babel-preset-expo'],
+       plugins: [['module:react-native-dotenv', {
+         moduleName: '@env',
+         path: '.env',
+         allowUndefined: true
+       }]]
+     };
+   };
+   ```
+4. Instale dependências:
 
-🚀 Instalação e Execução
+   ```bash
+   npx expo install styled-components @expo/vector-icons \
+     react-native-safe-area-context react-native-screens expo-linking
+   npm install axios react-native-dotenv
+   ```
+5. Inicie o projeto:
 
-Clone este repositório:
+   ```bash
+   npx expo start -c
+   ```
+6. Escaneie o QR Code com o **Expo Go** ou use um emulador.
 
-git clone https://github.com/SEU_USUARIO/SEU_REPO.git
-cd app-ia
+---
 
-Crie o arquivo .env na raiz e defina:
+## 📜 Scripts úteis
 
-OPENAI_API_KEY=seu_token_aqui
+| Comando          | Descrição                            |
+| ---------------- | ------------------------------------ |
+| `npx expo start` | Inicia o app no dispositivo/emulador |
+| `npx expo build` | Gera build via EAS                   |
+| `npm run lint`   | Executa ESLint                       |
 
-Instale dependências via Expo para garantir compatibilidade:
+---
 
-npx expo install styled-components @expo/vector-icons \
-  react-native-safe-area-context react-native-screens expo-linking
+## 🔄 Fluxo de Desenvolvimento
 
-Instale libs adicionais:
+1. Crie uma branch de feature: `git checkout -b feature/nome-da-feature`
+2. Faça commits atômicos e claros.
+3. Dê push: `git push -u origin feature/nome-da-feature`.
+4. Abra Pull Request para `main` (ou `master`).
+5. Após revisão e aprovação, faça merge.
 
-npm install axios react-native-dotenv
+---
 
-Inicie o Metro Bundler (limpando cache):
+## 🚧 Boas Práticas
 
-npx expo start -c
+* **.env** deve estar no `.gitignore`.
+* Não versionar chaves de API; use GitHub Secrets para CI.
+* Sempre trate estados de loading e erros no chat.
+* Teste em dispositivos reais (iOS/Android).
 
-No Expo Go, escaneie o QR Code ou use emulador.
-
-💡 Principais Commits e Branching
-
-master/main: branch principal com versão estável.
-
-feature/*: novas funcionalidades ou refinamentos.
-
-Use git checkout -b feature/nome-da-feature para criar.
-
-📜 Scripts (package.json)
-
-Comando
-
-Descrição
-
-npx expo start
-
-Inicia o app no dispositivo/emulador
-
-npx expo build
-
-Prepara build via EAS para publicação
-
-npm run lint
-
-Executa ESLint
-
-🔄 Fluxo de Desenvolvimento
-
-Branch: crie feature/* para cada tarefa.
-
-Commit: mensagens claras e atômicas.
-
-Push: git push -u origin feature/*.
-
-Pull Request: abra PR para main e execute code review.
-
-Merge: após validações e testes.
-
-🚧 Boas Práticas
-
-Nunca versionar .env; adicione ao .gitignore.
-
-Para lidar com segredos, use GitHub Secrets ou variáveis de CI.
-
-Sempre trate estados de loading e erros no chat.
-
-Faça testes em dispositivos reais (iOS/Android).
-
-© 2025 Gabriel e equipe. Desenvolvimento com 💡.
+---
